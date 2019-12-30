@@ -236,6 +236,8 @@ class GenerateYouTubeURL:
             self.search_query = internals.format_string(
                 const.args.search_format, meta_tags, force_spaces=True
             )
+        
+        log.info("YouTube Query: " + self.search_query)
 
     def _best_match(self, videos):
         if not videos:
@@ -273,7 +275,9 @@ class GenerateYouTubeURL:
                 duration_tolerance = 55
                 max_duration_tolerance = 60
                 possible_videos_by_duration = []
-
+                
+                log.info("Target Duration: " + internals.videotime_from_seconds(self.meta_tags["duration"]))
+                
                 # start with a reasonable duration_tolerance, and increment duration_tolerance
                 # until one of the Youtube results falls within the correct duration or
                 # the duration_tolerance has reached the max_duration_tolerance
