@@ -270,8 +270,8 @@ class GenerateYouTubeURL:
                 )
             else:
                 # filter out videos that do not have a similar length to the Spotify song
-                duration_tolerance = 10
-                max_duration_tolerance = 20
+                duration_tolerance = 55
+                max_duration_tolerance = 60
                 possible_videos_by_duration = []
 
                 # start with a reasonable duration_tolerance, and increment duration_tolerance
